@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "leaflet": "^1.9.2",
+    "leaflet-geosearch": "^3.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.1.0",
@@ -36,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:htetaunglinn1998/react-leaflet-project.git",
+  "author": "htetaunglinn1998 <htetaung.linn@smilaxglobal.com>",
+  "license": "MIT"
 }
