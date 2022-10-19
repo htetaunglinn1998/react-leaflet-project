@@ -1,0 +1,24 @@
+:root {
+    --text-color: #fff;
+    --background-color: #6ba5d4;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+    background-color: var(--background-color);
+    color: var(--text-color)
+}
+
+.custom-popup .leaflet-popup-close-button {
+    color: var(--text-color) !important
+}
+
+.custom-popup .leaflet-popup-tip-container {
+    width: 30px;
+    height: 15px;
+}
+
+.custom-popup .leaflet-popup-tip {
+    background-color: var(--background-color);
+    border: none;
+    box-shadow: none;
+}
