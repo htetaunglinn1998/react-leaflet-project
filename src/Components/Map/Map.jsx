@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, Circle, ZoomControl, VideoOverlay } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Circle, ZoomControl, Polyline } from 'react-leaflet'
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from "leaflet";
@@ -11,6 +11,12 @@ import GeoSearch from '../GeoSearch/GeoSearch';
 const Map = () => {
 
     const [position, setPosition] = useState([16.774474543879833, 96.15880187732388])
+
+    const polyline = [
+        [16.774474543879833, 96.15880187732388],
+        [18.774472543879833, 96.15860187732388],
+    ]
+    const limeOptions = { color: 'lime' }
 
 
     //---------------------Getting Current Location-------------------------
@@ -51,6 +57,7 @@ const Map = () => {
                     Welcome to "Mapify" App! We are here for you.
                 </Popup>
             </Marker>
+            <Polyline pathOptions={limeOptions} positions={polyline} />
             <GeoSearch />
             <Circle center={position} radius={50}></Circle>
             <ZoomControl position="bottomright" />
