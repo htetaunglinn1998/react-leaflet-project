@@ -5,15 +5,10 @@ import "leaflet-geosearch/dist/geosearch.css"
 
 const GeoSearch = () => {
 
-    const provider = new MapBoxProvider({
-        params: {
-            access_token: "pk.eyJ1IjoibWlua2hhbnQzMDE1IiwiYSI6ImNsOWdzN2U3NjB2ZHczd28weTd2djdic3QifQ.624jN7a42dJgAFy0tu-5DQ",
-        },
-    });
 
     const SearchField = () => {
         const searchControl = new GeoSearchControl({
-            provider: provider,
+            provider: new OpenStreetMapProvider(),
             style: 'bar',
             showMarker: false,
             autoComplete: true,
