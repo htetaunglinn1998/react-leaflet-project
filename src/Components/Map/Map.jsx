@@ -50,7 +50,6 @@ const Map = () => {
         [],
     )
 
-
     //---------------------Getting Current Location-------------------------
     // function getLocation() {
     //     if (navigator.geolocation) {
