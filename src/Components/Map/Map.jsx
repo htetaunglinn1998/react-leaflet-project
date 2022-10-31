@@ -1,11 +1,14 @@
 import React, { useState, useRef, useMemo } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, Circle, ZoomControl, Polyline, LayersControl, LayerGroup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Circle, ZoomControl, Polyline, LayersControl, LayerGroup, FeatureGroup } from 'react-leaflet'
+import { EditControl } from "react-leaflet-draw"
 import icon from 'leaflet/dist/images/marker-icon.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 import L from "leaflet";
 import "leaflet/dist/leaflet.css"
+import "leaflet-draw/dist/leaflet.draw.css"
 import "./Map.css"
 import GeoSearch from '../GeoSearch/GeoSearch';
+
 
 
 const Map = () => {
@@ -67,6 +70,20 @@ const Map = () => {
     //     getLocation();
     // }, 5000)
 
+    //--------------------------Add Draw Features------------------------------
+
+    const _onEditPath = (e) => {
+        console.log(e)
+    }
+
+    const _onCreate = (e) => {
+        console.log(e)
+    }
+
+    const _onDeleted = (e) => {
+        console.log(e)
+    }
+
     //--------------------------To Show Marker Correctly------------------------
     let DefaultIcon = L.icon({
         iconUrl: icon,
@@ -117,6 +134,19 @@ const Map = () => {
                     </LayersControl.Overlay>
                 </LayersControl>
 
+                <FeatureGroup>
+                    <EditControl
+                        position='topright'
+                        onEdited={_onEditPath}
+                        onCreated={_onCreate}
+                        onDeleted={_onDeleted}
+                        draw={{
+                            rectangle: false,
+                            marker: false,
+                        }}
+                    />
+                    <Circle center={[51.51, -0.06]} radius={200} />
+                </FeatureGroup>
                 <ZoomControl position="bottomright" />
                 <GeoSearch />
             </MapContainer>
